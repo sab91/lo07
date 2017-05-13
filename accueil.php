@@ -9,6 +9,7 @@
     	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
         <script>
         /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+            /* je teste */
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
             document.getElementById("content").style.marginLeft = "250px";
