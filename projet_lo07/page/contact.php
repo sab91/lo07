@@ -5,8 +5,8 @@
         <title>Cursus</title>
     </head>
     <body>
-        <?php include('include/menu.php') ?>
-        <?php include('include/nav.php') ?>
+        <?php include('include/menu.php'); ?>
+        <?php include('include/topbar.php'); ?>
         <div class="content">
            
         </div>

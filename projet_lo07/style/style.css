@@ -15,7 +15,8 @@ body {
     transition: 0.4s;
 }
 
-/* The side navigation menu */
+/* The side navigation menu ==============================================*/
+
 .sidenav {
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
@@ -66,7 +67,7 @@ body {
 }
 
 
-
+/* Barre en haut de la page =============================================*/
 .topbar {
     height: 50px;
     border-bottom: 1px solid rgb(0,66,124);
@@ -74,7 +75,6 @@ body {
     box-shadow: 2px 2px 12px #00427C;
     /*position: fixed;*/
     width: 100%;
-    z-index: 1;
     padding: 0px;
     text-align: center;
     font-size: 2em;
@@ -86,9 +86,7 @@ body {
     padding: 1px;
 }
 
-#nav1 {
-    z-index: 1;
-}
+/*===========================================================*/
 
 .fixed {
 	position:fixed;
@@ -97,7 +95,62 @@ body {
     z-index: 1;
 }
 
-.info_perso_etu {
+.info_perso_etu, .info_cursus_etu, #form {
     border: 1px solid;
     padding: 10px;
+}
+
+#choix_ue {
+    width: 50px;
+}
+
+#tc_plusdiv {
+    display: none;
+}
+
+#cursus, tr, td {
+    border: 2px solid black;
+}
+#cursus td {
+    width: 100px;
+    text-align: center;
+}
+
+/* Page accueil avec trois vignettes =========================*/
+.vignette {
+	/* max-width: 300px; */
+	vertical-align:middle; /* On aligne les éléments au milieu */
+	display:inline-block;/* On le remplace au float:left; */
+	overflow: hidden; 
+	text-align:left;/* On réinitialise les élements centré a gauche */	
+	padding: 5px;
+	margin: 20px 5px;
+	background: linear-gradient(to right top, #aaa, #ddd);
+	box-shadow: 0 0 15px rgba(0,0,0,0.4);
+	width: 70%;
+    min-height: 200px;
+}
+
+/* Bouttons vignettes ======================================== */
+.button {
+    background-color: #00427C; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #00427C;
+}
+
+.button:hover {
+    background-color: #00427C;
+    color: white;
 }

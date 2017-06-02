@@ -1,22 +1,3 @@
-drop table if exists ue;
-drop table if exists etudiant;
-drop table if exists cursus;
-drop table if exists elem_formation;
-drop table if exists authentification;
-
-use utt_dba;
-
-create table ue (
-	sigle varchar(4),
-    nom varchar(45) not null,
-    categorie varchar(4) not null check(categorie in ('CS','TM','EC','HT','ME','ST','SE','HP','NPML')),
-    affectation varchar(4) not null check(affecation in ('TC', 'TCBR', 'FCBR', 'BR')),
-    branche varchar(3) check(branche in ('ISI','RT','MTE','A2I','GM','GI','MM')),
-    utt varchar(1) not null check(utt in('Y','N')),
-    filiere varchar(5),
-    primary key (sigle)
-);
-    
 create table etudiant (
 	numero_etu int(6),
     nom varchar(45) not null,
@@ -55,6 +36,3 @@ create table authentification (
     primary key (n_etu),
     foreign key (n_etu) references etudiant(numero_etu)
 );
-
-alter table ue engine = InnoDB;
-drop table ue;

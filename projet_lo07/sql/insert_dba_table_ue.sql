@@ -1,4 +1,5 @@
 insert into ue values('RE04','Réseaux de l_internet','CS','TCBR','ISI','');
+insert into ue values('RE02','Réseaux','CS','TCBR','SRT','');
 insert into ue values('IF02','Réseaux de l_internet','CS','TCBR','ISI','');
 insert into ue values('LO07','Technologie Web','TM','TCBR','ISI','');
 insert into ue values('NF19','Administration de base de données','TM','TCBR','ISI','');
@@ -18,4 +19,3 @@ insert into categorie values('Management de l’Entreprise','ME','4');
 insert into categorie values('Humanités','HT','4');
 insert into categorie values('Stages','ST','30');
 
-delete from ue;

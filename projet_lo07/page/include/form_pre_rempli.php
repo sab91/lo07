@@ -3,19 +3,27 @@
         <h1>Informations étudiant</h1>
         <p>
             <?php
-            $fichier = fopen("C:/wamp64/www/projet_lo07/csv/" . $_FILES['cursus']['name'],"r");
-
-            while(! feof($fichier))
-              {
-                /*foreach($array as $element) {
-                    $data = explode(";", $element);
-                }*/
-                /*print_r(fgets($fichier));*/
-                $data = explode(";", fgets($fichier));
-                print_r($data);
-              }
-
-            fclose($fichier);
+            $fichier = fopen("C:/wamp64/www/projet_lo07/csv/" . $_FILES['cursus']['name'],"r"); 
+            $c = 0; 
+            $data = fread($fichier, filesize("C:/wamp64/www/projet_lo07/csv/" . $_FILES['cursus']['name']));
+            $lines = explode("\n", $data);
+            /*$lines = fgetcsv($fichier,"","\n");*/
+            /*while(! feof($fichier) && $c <= 4)
+            {
+                $lines[] = fgetcsv($fichier,"","\n");
+                $c++;
+            }*/
+            foreach($lines as $key => $data) {
+                if($key <= 4) {list($class[],$value[]) = explode(';', $data);}
+            }
+            fclose($fichier);            
+            print_r($lines);
+            echo '<br>';
+            print_r($class);
+            echo '<br>';
+            print_r($value);
+            
+            echo '<br>';
             
             input_form('Nom', 'text', 'nom');
             input_form('Prénom', 'text', 'prenom');
@@ -23,9 +31,7 @@
             ?>
         </p>
         <div>
-            <!--<label for="admission" >Etudiant admis en : </label><br>
-            TC <input type="radio" name="admission" value="TC" onclick="afficher('visible');" ><br>
-            Branche <input type="radio" name="admission" value="Branche" onclick="afficher('hidden');" ><br>--><label for="admission" >Etudiant admis en : </label><br>
+            <label for="admission" >Etudiant admis en : </label><br>
             TC <input type="radio" name="admission" value="TC" id="tc" ><br>
             TC5 <input type="checkbox" name="tc_plus" value="TC5" >
             TC6 <input type="checkbox" name="tc_plus" value="TC6" ><br>
@@ -45,17 +51,7 @@
                 <td>UE 5</td>
                 <td>UE 6</td>
             </tr>
-            <?php tr('tc1','TC1', 'TC') ?>
-            <?php tr('tc2','TC2', 'TC') ?>
-            <?php tr('tc3','TC3', 'TC') ?>
-            <?php tr('tc4','TC4', 'TC') ?>
-            <?php tr('tc5','TC5', 'TC') ?>
-            <?php tr('tc6','TC6', 'TC') ?>
-            <?php tr('br1','BR1', 'ISI') ?>
-            <?php tr('br2','BR2', 'ISI') ?>
-            <?php tr('br3','BR3', 'ISI') ?>
-            <?php tr('br4','BR4', 'ISI') ?>
-
+           
         </table>
 
     </div>
